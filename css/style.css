@@ -219,6 +219,7 @@ textarea {
 	margin-top: 36px;
 	line-height: 34px;
 	text-indent: 43px;
+	background:url(../img/user.png) no-repeat 10px 6px;
 }
 
 .user:hover {

@@ -1,0 +1,655 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body {
+	font-size: 12px;
+	font-family: "宋体";
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+blockquote {
+	padding: 0;
+	margin: 0;
+}
+
+table,
+td,
+tr,
+th {
+	font-size: 12px;
+}
+
+li {
+	list-style-type: none;
+}
+
+table {
+	margin: 0 auto;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}
+
+a {
+	color: #222222;
+	text-decoration: none;
+}
+
+input,
+textarea {
+	outline: none;
+	box-shadow: none;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+}
+
+.cleardiv {
+	clear: both;
+	height: 0;
+	width: 1px;
+	font-size: 1px;
+	visibility: hidden;
+	line-height: 0px;
+}
+
+.sedge {
+	border: #ff0000 1px solid;
+}
+
+.ell {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.top_bg {
+	width: 100%;
+	height: 30px;
+	margin: 0 auto;
+	background: url(../img/top_bg.png) repeat-x top center;
+}
+
+.top {
+	width: 1200px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+}
+
+.top span {
+	float: left;
+	color: #666666;
+}
+
+.top dl {
+	float: right;
+	min-width: 110px;
+	color: #ff9600;
+	margin-left: 20px;
+}
+
+.top dl dt {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url(../img/men.png) no-repeat center center;
+	margin-top: 7px;
+}
+
+.top dl dd {
+	float: left;
+}
+
+.top dl a {
+	margin-left: 8px;
+	color: #ff9600;
+	margin-right: 8px;
+}
+
+.top dl a:hover {
+	color: #F00;
+	text-decoration: initial;
+}
+
+.top_li {
+	float: right;
+	color: #666666;
+	height: 30px;
+}
+
+.top_li a {
+	color: #666666;
+	margin: 0px 10px 0px 10px;
+	text-decoration: blink;
+}
+
+.top_li a:hover {
+	color: #F00;
+	text-decoration: inherit;
+}
+
+#login_on {
+	display: none;
+}
+
+.head {
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 255px;
+	height: 67px;
+	float: left;
+	margin-top: 13px;
+	margin-left: -36px;
+}
+
+.searchs {
+	width: 500px;
+	height: 36px;
+	float: left;
+	margin: 37px 0px 0px 129px;
+}
+
+.search {
+	width: 500px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+.search_in {
+	width: 416px;
+	height: 30px;
+	float: left;
+	border-left: #4ba007 3px solid;
+	border-top: #4ba007 3px solid;
+	border-bottom: #4ba007 3px solid;
+	border-right: 0px;
+	line-height: 30px;
+	text-indent: 32px;
+	color: #333;
+	background:url(../img/search.png) no-repeat 5px center;
+	background-size:20px;
+}
+
+.search_butt {
+	width: 81px;
+	height: 36px;
+	float: left;
+	background: #4BA007;
+	border: 0px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+
+.user {
+	width: 108px;
+	height: 34px;
+	border:1px #dcdcdc solid;
+	float: right;
+	margin-top: 36px;
+	line-height: 34px;
+	text-indent: 43px;
+}
+
+.user:hover {
+	border:1px #ff9600 solid;
+	color:#f00;
+}
+
+.buy {
+	height: 36px;
+	float: right;
+	margin: 36px 0px 0px 36px;
+	line-height: 36px;
+	text-indent: 29px;
+}
+
+.buy strong {
+	font-size: 17px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #d30000;
+}
+
+.buy:hover {
+	background: url(../img/buys.png) no-repeat center center;
+}
+
+.nav {
+	width: 100%;
+	height: 41px;
+	background: #4ba007;
+	margin: 0 auto;
+}
+
+.nav ul {
+	width: 1200px;
+	height: 41px;
+	margin: 0 auto;
+}
+
+.nav span {
+	float: left;
+	width: 219px;
+	height: 41px;
+	background: url(../img/left_t_bg.png) repeat-x top center;
+	line-height: 41px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+
+.nav ul li {
+	float: left;
+	width: 129px;
+	height: 41px;
+	line-height: 41px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	margin-left: 1px;
+}
+
+.nav ul li:hover {
+	background: #73b613;
+}
+
+.main {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.ad_show {
+	width: 100%;
+	height: 75px;
+	background: #4ba007;
+	margin: 0 auto;
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+.ad_show ul {
+	width: 1200px;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.ad_show ul li {
+	width: 280px;
+	height: 68px;
+	float: left;
+	padding-top: 7px;
+	margin-left: 20px;
+}
+
+.low1 {
+	background: url(../img/low1.png) no-repeat left center;
+}
+
+.low2 {
+	background: url(../img/low2.png) no-repeat left center;
+}
+
+.low3 {
+	background: url(../img/low3.png) no-repeat 28px center;
+}
+
+.low4 {
+	background: url(../img/low4.png) no-repeat 28px center;
+}
+
+.ad_show ul li p {
+	margin-left: 79px;
+	color: #fff;
+}
+
+.guide {
+	width: 100%;
+	height: 200px;
+	border-bottom: 1px #dcdcdc solid;
+	background: #ececec;
+}
+
+.guide_li {
+	width: 598px;
+	height: 200px;
+	float: left;
+}
+
+.guide_li li {
+	width: 110px;
+	height: 180px;
+	float: left;
+	margin-left: 39px;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+.guide_li li h5 {
+	color: #666666;
+	font-size: 14px;
+}
+
+.guide_li li a {
+	color: #666666;
+	text-decoration: none;
+}
+
+.guide_li li a:hover {
+	color: #F00;
+}
+
+.guide_r {
+	float: right;
+	width: 600px;
+	height: 160px;
+	border-left: #999999 1px dashed;
+	margin-top: 18px;
+}
+
+.link {
+	height: 112px;
+	float: left;
+	width: 390px;
+}
+
+.link dl {
+	float: left;
+	margin: 8px 23px 0px 35px;
+}
+
+.link dl dt {
+	width: 64px;
+	height: 63px;
+}
+
+.link dl dd {
+	width: 64px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #666666;
+}
+
+.link1 {
+	background: url(../img/wb.png) no-repeat center center;
+}
+
+.link2 {
+	background: url(../img/twb.png) no-repeat center center;
+}
+
+.link3 {
+	background: url(../img/QQ.png) no-repeat center center;
+}
+
+.link1:hover {
+	background: url(../img/wbs.png) no-repeat center center;
+}
+
+.link2:hover {
+	background: url(../img/twbs.png) no-repeat center center;
+}
+
+.link3:hover {
+	background: url(../img/QQs.png) no-repeat center center;
+}
+
+.fx {
+	float: left;
+	height: 45px;
+	width: 307px;
+	border-top: 1px #dcdcdc solid;
+	line-height: 45px;
+	margin-left: 36px;
+}
+
+.bshare-custom {
+	margin-top: 10px;
+	height: 35px;
+	color: #666666;
+	text-indent: 10px;
+}
+
+.ma {
+	float: right;
+	text-align: center;
+	width: 157px;
+	margin-right: 40px;
+	color: #666666;
+}
+
+.ma dd {
+	line-height: 22px;
+}
+
+.footer {
+	width: 100%;
+	height: 120px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 26px;
+	color: #666666;
+}
+
+.left_menu {
+	float: left;
+	width: 215px;
+	height: 415px;
+	border-left: 2px #ffa800 solid;
+	border-right: 2px #ffa800 solid;
+	border-bottom: 2px #ffa800 solid;
+}
+
+.left_menu ul {
+	width: 215px;
+	height: auto;
+	float: left;
+	position: relative;
+}
+
+.left_menu ul li {
+	width: 215px;
+	height: 40px;
+	border-bottom: 1px #d2d2d2 dashed;
+	background: url(../img/left_li.png) no-repeat 163px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: #3c3c3c;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+
+.left_menu ul li:hover a {
+	text-decoration: none;
+}
+
+.left_menu ul li:hover {
+	border-top: 2px #ffa800 solid;
+	border-bottom: 2px #ffa800 solid;
+}
+
+.left_menu span {
+	position: absolute;
+	top: -1px;
+	left: 215px;
+	background-color: #fff;
+	border: #ffa800 solid 1px;
+	display: none;
+	z-index: 1000;
+	width: 300px;
+	text-align: left;
+	line-height: 28px;
+	font-size: 13px;
+	min-height: 60px;
+}
+
+.left_menu span a {
+	margin: 0px 10px 0px 10px;
+}
+
+.left_menu span a:hover {
+	text-decoration: none;
+}
+
+.left_menu ul li span a {
+	text-decoration: none;
+}
+
+.left_menu ul li span a:hover {
+	color: #f60;
+}
+
+.tj {
+	width: 36px;
+	height: 16px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../img/tejia.gif) no-repeat center center;
+}
+
+.passwordreset {
+	width: 960px;
+	height: 500px;
+	margin: 20px auto 0px auto;
+}
+
+.passwordreset h1 {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	font-family: "微软雅黑";
+	text-indent: 1em;
+	margin: 5px auto 0px auto;
+	width: 1000px;
+}
+
+.passwordreset .step1 {
+	width: 960px;
+	height: 60px;
+	background: url(../img/find-password.gif) no-repeat bottom center;
+	margin: 40px auto 0px auto;
+}
+
+.passwordreset .step2 {
+	width: 960px;
+	height: 50px;
+	background: url(../img/find-password.gif) no-repeat 0px -100px;
+	margin: 40px auto 0px auto;
+}
+
+.passwordreset .step3 {
+	width: 960px;
+	height: 50px;
+	background: url(../img/find-password.gif) no-repeat 0px -50px;
+	margin: 40px auto 0px auto;
+}
+
+.passwordreset .step4 {
+	width: 960px;
+	height: 50px;
+	background: url(../img/find-password.gif) no-repeat top center;
+	margin: 40px auto 0px auto;
+}
+
+.passwordreset dl {
+	width: 50%;
+	margin: 20px auto 10px auto;
+	clear: both;
+}
+
+.passwordreset .useridtext {
+	width: 180px;
+	height: 21px;
+	border: solid 1px #c8c8c8;
+	overflow: hidden;
+	margin: 100px auto 20px 1px;
+	color: #666;
+}
+
+.passwordreset .userpass {
+	width: 180px;
+	height: 21px;
+	border: solid 1px #c8c8c8;
+	overflow: hidden;
+	margin: 0px auto 0px 1px;
+	color: #666;
+}
+
+.passwordreset .resetpwd {
+	width: 85px;
+	height: 21px;
+	border: solid 1px #c8c8c8;
+	overflow: hidden;
+	margin: 0px auto 0px 1px;
+	color: #666;
+}
+
+.passwordreset .nextship {
+	margin: 20px auto 0px auto;
+	width: 70px;
+	height: 23px;
+	background: #4fac00;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	line-height: 23px;
+}
+
+.passwordreset .nextship2 {
+	margin: 20px auto 0px auto;
+	width: 120px;
+	height: 23px;
+	background: #4fac00;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	line-height: 23px;
+}
+
+.emailcode {
+	margin: 100px auto 20px 1px;
+	color: #f60;
+	display: inline-block;
+}
+
+.youemail {
+	font-weight: normal;
+	color: #333;
+	font-size: 14px;
+}

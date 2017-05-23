@@ -214,25 +214,52 @@ textarea {
 .user {
 	width: 108px;
 	height: 34px;
-	border:1px #dcdcdc solid;
+	border:1px #ddd solid;
 	float: right;
 	margin-top: 36px;
 	line-height: 34px;
-	text-indent: 43px;
-	background:url(../img/user.png) no-repeat 10px 6px;
+	border-radius: 3px;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+}
+.user span{
+	display: inline-block;
+	width: 20px;
+	height: 22px;
+	overflow:hidden;
+	margin:5px 10px 5px 10px;
+	float:left;
+	background-image:url(../img/user.png);
+	background-repeat: no-repeat;
+	background-position: 0px -22px;	
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
 }
 
 .user:hover {
 	border:1px #ff9600 solid;
 	color:#f00;
 }
+.user:hover span{
+	background-position: 0px 0px;
+}
 
 .buy {
-	height: 36px;
+	
+	height: 34px;
+	border:1px #ddd solid;
 	float: right;
-	margin: 36px 0px 0px 36px;
-	line-height: 36px;
-	text-indent: 29px;
+	margin: 36px 0px 0px 20px;
+	line-height: 34px;
+	border-radius: 3px;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
 }
 
 .buy strong {
@@ -241,8 +268,28 @@ textarea {
 	color: #d30000;
 }
 
+.buy span{
+	display: inline-block;
+	width: 25px;
+	height: 18px;
+	overflow:hidden;
+	margin:8px 10px 7px 10px;
+	float:left;
+	background-image:url(../img/buy.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+}
+
 .buy:hover {
-	background: url(../img/buys.png) no-repeat center center;
+	border:1px #ff9600 solid;
+	color:#f00;
+}
+.buy:hover span{
+	background-position: 0px -18px;
 }
 
 .nav {
@@ -280,10 +327,16 @@ textarea {
 	font-size: 16px;
 	font-family: "微软雅黑";
 	margin-left: 1px;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	
 }
 
 .nav ul li:hover {
 	background: #73b613;
+	font-size:18px;
 }
 
 .main {

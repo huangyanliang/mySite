@@ -305,16 +305,27 @@ textarea {
 	margin: 0 auto;
 }
 
-.nav span {
+.all_menu {
 	float: left;
 	width: 219px;
 	height: 41px;
-	background: url(../img/left_t_bg.png) repeat-x top center;
+	background: #ffa800;
 	line-height: 41px;
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
 	font-family: "微软雅黑";
+	vertical-align: middle;
+}
+
+.all_menu span{
+	/*float:left;*/
+	display: inline-block;
+	background:url(../img/all.png) no-repeat;
+	width:25px;
+	height:25px;
+	margin-right:10px;
+	vertical-align: middle;
 }
 
 .nav ul li {
@@ -520,41 +531,32 @@ textarea {
 
 .left_menu {
 	float: left;
-	width: 215px;
-	height: 415px;
-	border-left: 2px #ffa800 solid;
-	border-right: 2px #ffa800 solid;
-	border-bottom: 2px #ffa800 solid;
+	width: 219px;
+	height: 417px;
+	background:#fdb428;
 }
 
 .left_menu ul {
-	width: 215px;
+	width: 100%;
 	height: auto;
 	float: left;
 	position: relative;
 }
 
 .left_menu ul li {
-	width: 215px;
-	height: 40px;
-	border-bottom: 1px #d2d2d2 dashed;
-	background: url(../img/left_li.png) no-repeat 163px;
+	width: 100%;
+	height: 41px;
 	text-align: center;
 	line-height: 40px;
 	font-size: 14px;
-	color: #3c3c3c;
+	color: #fff;
 	position: relative;
 	float: left;
 	cursor: pointer;
 }
 
-.left_menu ul li:hover a {
-	text-decoration: none;
-}
-
 .left_menu ul li:hover {
-	border-top: 2px #ffa800 solid;
-	border-bottom: 2px #ffa800 solid;
+	background:#fcbe47;
 }
 
 .left_menu span {

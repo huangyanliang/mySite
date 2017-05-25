@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图demo</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.slim.js" ></script>
+		<link rel="stylesheet" href="css/demo.css" />
+		<script type="text/javascript">
+			var t = n = i = 0, count;
+			$(function(){
+			    count=$(".scroll_pic a").length;//求出图片数量
+				$(".scroll_pic a:not(:first)").hide();//隐藏第一张以外的所有图片
+				$("#scroll_button li").click(function(){
+					i = n = $(this).index();//index() 方法返回指定元素相对于其他指定元素的 index 位置。
+					$(".scroll_pic a").eq(i).show().siblings().hide();//siblings()选择除自身以外的所有同胞元素
+					$(this).addClass("scroll_in").siblings().removeClass("scroll_in");
+					//鼠标经过图片区域停止setInterval()调用函数，移开恢复
+				});
+				t = setInterval("picShowAuto()", 3500);//setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭
+				$(".scroll").hover(function(){clearInterval(t)}, function(){t = setInterval("picShowAuto()", 3500);});
+			});
+			
+			function picShowAuto(){
+				n = n >=(count -1) ?0 : ++n;
+				$("#scroll_button li").eq(n).trigger("click");//trigger() 方法触发被选元素的指定事件类型
+			}
+		</script>
+	</head>
+	<body>
+		<div class="scroll">
+			<div class="scroll_pic">
+				<a href="#"><img src="img/pic1.jpg" alt=""/></a>
+				<a href="#"><img src="img/pic2.jpg" alt=""/></a>
+				<a href="#"><img src="img/pic3.jpg" alt=""/></a>
+				<a href="#"><img src="img/pic.jpg" alt=""/></a>
+			</div>
+			<ul id="scroll_button">
+				<li class="scroll_in"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

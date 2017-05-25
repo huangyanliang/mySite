@@ -1,9 +1,47 @@
-.pic {
+.scroll {
 	width: 720px;
-	height: 409px;
+	height: 410px;
 	float: left;
-	margin: 8px 0px 0px 8px;
+	margin: 7px 0px 0px 7px;
+	overflow: hidden;
+	position: relative;
 }
+
+.scroll ul {
+	padding: 5px 5px;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+	bottom: 10px;
+	left: 50%;
+	background:rgba(455,455,455,0.4);
+	border-radius: 28px;
+}
+
+.scroll ul li {
+	float: left;
+	margin: 0px 5px;
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	border:1px #73B613 solid;
+	background: #FCBE47;
+	cursor: pointer;
+		
+}
+
+.scroll ul li.scroll_in{
+	background:#FF6600;
+}
+
+.scroll_pic a{
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+}
+
 
 .new {
 	width: 245px;

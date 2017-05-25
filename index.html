@@ -3,14 +3,13 @@
 
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="<?php echo $MetaKeyWords;?>" />
-		<meta name="description" content="<?php echo $MetaDescription;?>" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/index.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.slim.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
 		<title>给力生鲜</title>
 	</head>
 
@@ -89,7 +88,20 @@
 				</ul>
 			</div>
 
-			<div class="pic"><img src="img/pic.jpg" width="720" height="409" /></div>
+			<div class="scroll">
+				<div class="scroll_pic">
+					<a href="#"><img src="img/pic.jpg" alt=""/></a>
+					<a href="#"><img src="img/pic1.jpg" alt=""/></a>
+					<a href="#"><img src="img/pic2.jpg" alt=""/></a>
+					<a href="#"><img src="img/pic3.jpg" alt=""/></a>
+				</div>
+				<ul id="scroll_button">
+					<li class="scroll_in"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
 
 			<div class="new">
 				<div class="new_t"><strong>最新公告</strong><span><a href=""><img src="img/more.png" width="32" height="11" /></a></span></div>

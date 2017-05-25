@@ -77,6 +77,11 @@
 	background: url(../img/li.png) no-repeat 2px center;
 	text-indent: 15px;
 }
+.new ul li:hover{
+	color:#f00;
+	position: relative;
+	top:1px;
+}
 
 .ads {
 	margin-top: 10px;
@@ -283,58 +288,3 @@
 	font-size: 13px;
 }
 
-
-/*切换图*/
-
-.icon_sprite {
-	background-image: url(../img/nr_icon_sprite.png) !important;
-	background-image: url(../nr_icon_sprite_ie6.png);
-	background-repeat: no-repeat;
-	z-index: 10;
-}
-
-.kv_wrap {
-	position: relative;
-	width: 720px;
-	height: 409px;
-}
-
-.kv_item {
-	height: 409px;
-	overflow: hidden;
-}
-
-.kv_item li {
-	height: 409px;
-	text-align: center;
-}
-
-.kv_item li a {
-	background-position: center center;
-	background-repeat: no-repeat;
-	display: block;
-	height: 409px;
-}
-
-.kv_nav {
-	left: 45%;
-	position: absolute;
-	top: 92%;
-	text-align: right;
-	width: 100px;
-}
-
-.kv_nav li {
-	background-position: -10px -10px;
-	cursor: pointer;
-	display: inline-block;
-	height: 16px;
-	margin-left: 4px;
-	margin-right: 3px;
-	width: 16px;
-	float: left;
-}
-
-.kv_nav li.current {
-	background-position: -36px -10px;
-}

@@ -1,0 +1,62 @@
+.box{overflow:hidden;margin:50px;}
+
+.edit_box_t{width:1280px;height:60px;background-color:#393D49;border-bottom:solid 2px #009688;border-radius:5px 5px 0px 0px;}
+.logo{color:#fff;line-height:60px;margin-left:20px;float:left;}
+.edit_box_tMenu{width:60%;height:30px;float:left;margin-top:25px;
+margin-left:50px;border-radius: 30px 30px 0px 0px;}
+.editSave{float:right;width:70px;height:28px;text-align:center;line-height:28px;color:#fff;cursor: pointer;
+background-color:#009688;border-radius: 3px;margin-right:20px;margin-top:20px;font-size:12px;}
+.editSave:hover{background-color:#5FB878;}
+.editSave img{margin-right:5px;vertical-align: middle;margin-top:-3px;}
+.edit_box_tMenu ul{margin-left:20px;}
+.edit_box_tMenu ul i{float:left;width: 1px;height:15px;margin-top:8px;border-left: 1px #fff dashed;margin-left:10px;}
+.edit_box_tMenu li{float:left;margin-left:10px;padding:2px;cursor:pointer;margin-top:5px;
+text-align:center;height:22px;border-radius: 3px;}
+.edit_box_tMenu li img{height:18px;}
+.edit_box_tMenu li:hover{background-color:#009688;}
+
+.edit_box_l{width:80px;height:800px;float:left;background-color:#393D49;}
+.edit_box_l dl{margin-top:20px;cursor: pointer;width:70px;margin-left:5px;border-radius: 3px;padding-bottom:3px;}
+.edit_box_l dl:hover{background-color:#009688;}
+.edit_box_l dl:active{background-color:#5FB878;}
+.edit_box_l dd{color:#fff;text-align:center;font-size:14px;margin-top:-3px;}
+.edit_box_l dt{width:70px;height:48px;text-align: center;}
+
+.edit_box{width:1200px;height:800px;border:1px #009688 solid;border-top:0px;border-left:0px;float:left;position: relative;background-color:#fff;}
+.imgBox{width:202px;height:202px;background: url(../img/img.png) no-repeat center center;z-index: 1000;}
+.imgBox img{width:100%;vertical-align: middle;}
+.textBox{width:202px;height:42px;background: url(../img/text.png) no-repeat center center;z-index: 1000;}
+.videoBox{width:302px;height:202px;background: url(../img/video.png) no-repeat center center;z-index: 1000;}
+.songBox{width:252px;height:252px;background: url(../img/song.png) no-repeat center center;z-index: 1000;}
+
+
+/*.imgBoxEdit{width:300px;height:200px;position: fixed;top:50%;left:50%;background:#efefef;padding:10px;border-radius: 3px;
+margin-top:-150px;margin-left:-100px;}
+.imgBoxEdit dl{line-height:45px;width:100%;}
+.imgBoxEdit dt{float:left;width:80px;text-align:right;}
+.imgBoxEdit dd{float:left;}*/
+
+.drsElement{background-color:#fff;border:1px #999 dashed;position:absolute;top: 100px;left:100px;
+cursor: move;}
+.dragresize {position: absolute;width: 5px;height: 5px;font-size: 1px;background: #EEE;border: 1px solid #333;}
+.dragresize-tl {top: -8px;left: -8px;cursor: nw-resize;}
+.dragresize-tm {top: -8px;left: 50%;margin-left: -4px;cursor: n-resize;}
+.dragresize-tr {top: -8px;right: -8px;cursor: ne-resize;}
+.dragresize-ml {top: 50%;margin-top: -4px;left: -8px;cursor: w-resize;}
+.dragresize-mr {top: 50%;margin-top: -4px;right: -8px;cursor: e-resize;}
+.dragresize-bl {bottom: -8px;left: -8px;cursor: sw-resize;}
+.dragresize-bm {bottom: -8px;left: 50%;margin-left: -4px;cursor: s-resize;}
+.dragresize-br {bottom: -8px;right: -8px;cursor: se-resize;}
+
+.fontColorBtn,.bgColorBtn{position: relative;}
+.fontColor,.bgColor{width:80px;height:80px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#fff;display: none;}
+.fontColor span,.bgColor span{width:10px;height:10px;float:left;margin-top:5px;margin-left:5px;}
+.c_red{background-color:red;}
+.c_orange{background-color:orange;}
+.c_yellow{background-color: yellow}
+.c_green{background-color:green;}
+.c_blue{background-color:blue;}
+.c_indigo{background-color:indigo;}
+.c_purple{background-color:purple;}
+.c_black{background-color:black;}
+

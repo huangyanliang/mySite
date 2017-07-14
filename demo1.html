@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jquery实现可拖动进度条demo</title>
+	</head>
+	<style>
+		.progress{position: relative; width:300px;margin:100px auto;}
+		.progress_bg{height: 10px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;background-color:#f2f2f2;}
+		.progress_bar{background: #5FB878; width: 0; height: 10px; border-radius: 5px;}
+		.progress_btn{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+		left: 0px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+		.progress_btn:hover{border-color:#F7B824;}
+	</style>
+	<body>
+		<div class="progress">
+			<div class="progress_bg">
+				<div class="progress_bar"></div>
+			</div>
+			<div class="progress_btn"></div>
+			<div class="text">0%</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script>
+			$(function(){
+				var tag = false,ox = 0,left = 0,bgleft = 0;
+				$('.progress_btn').mousedown(function(e) {
+					ox = e.pageX - left;
+					tag = true;
+				});
+				$(document).mouseup(function() {
+					tag = false;
+				});
+				$('.progress').mousemove(function(e) {//鼠标移动
+					if (tag) {
+						left = e.pageX - ox;
+						if (left <= 0) {
+							left = 0;
+						}else if (left > 300) {
+							left = 300;
+						}
+						$('.progress_btn').css('left', left);
+						$('.progress_bar').width(left);
+						$('.text').html(parseInt((left/300)*100) + '%');
+					}
+				});
+				$('.progress_bg').click(function(e) {//鼠标点击
+					if (!tag) {
+						bgleft = $('.progress_bg').offset().left;
+						left = e.pageX - bgleft;
+						if (left <= 0) {
+							left = 0;
+						}else if (left > 300) {
+							left = 300;
+						}
+						$('.progress_btn').css('left', left);
+						$('.progress_bar').animate({width:left},300);
+						$('.text').html(parseInt((left/300)*100) + '%');
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

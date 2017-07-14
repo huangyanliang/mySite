@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js拖拽式网页编辑器</title>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-smartMenu.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/dragresize.js"></script>
+		<script src="js/demo2.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo2.css"/>
+		<link rel="stylesheet" type="text/css" href="css/smartMenu.css"/>
+	</head>
+	<body>
+		<input type="hidden" id="boxId" />
+		<div class="box">
+			<div class="edit_box_t">
+				<div class="logo">拖拽式网页编辑器</div>
+				<div class="edit_box_tMenu">
+					<ul>
+						<li onclick="changeFontColor()" class="fontColorBtn"><img src="img/fontColor.png">
+							<div class="fontColor">
+								<input type="hidden" id="fontColor" value="black" />
+								<span class="c_red"></span><span class="c_orange"></span><span class="c_yellow"></span>
+								<span class="c_green"></span><span class="c_blue"></span><span class="c_indigo"></span>
+								<span class="c_purple"></span><span class="c_black"></span>
+							</div>
+						</li><i></i>
+						<li onclick="changeBgColor()" class="bgColorBtn"><img src="img/bgColor.png">
+							<div class="bgColor">
+								<input type="hidden" id="bgColor" value="white" />
+								<span class="c_red"></span><span class="c_orange"></span><span class="c_yellow"></span>
+								<span class="c_green"></span><span class="c_blue"></span><span class="c_indigo"></span>
+								<span class="c_purple"></span><span class="c_black"></span>
+							</div>
+						</li><i></i>
+						<li onclick="moverLeft()"><img src="img/left.png"></li><i></i>
+						<li onclick="moverUp()"><img src="img/up.png"></li><i></i>
+						<li onclick="moverRight()"><img src="img/right.png"></li><i></i>
+						<li onclick="moverDown()"><img src="img/down.png"></li><i></i>
+						<li onclick="moverFull()"><img src="img/fullScreen.png"></li><i></i>
+						<li onclick="removeAll()"><img src="img/removeAll.png"></li>
+					</ul>
+				</div>
+				<div class="editSave" onclick="save()"><img src="img/save.png">保存</div>
+			</div>
+			<div class="edit_box_l">
+				<dl class="textBox_l" onclick="addText()">
+					<dt><img src="img/text_l.png"></dt>
+					<dd>文字</dd>
+				</dl>
+				<dl class="imgBox_l" onclick="addImg()">
+					<dt><img src="img/img_l.png"></dt>
+					<dd>图片</dd>
+				</dl>
+				<dl class="songBox_l" onclick="addSong()">
+					<dt><img src="img/song_l.png"></dt>
+					<dd>声音</dd>
+				</dl>
+				<dl class="videoBox_l" onclick="addVideo()">
+					<dt><img src="img/video_l.png"></dt>
+					<dd>视频</dd>
+				</dl>
+			</div>
+			<div class="edit_box">
+				<!--<div class="imgBox"></div>-->
+			</div>
+		</div>
+		<!--<div class="imgBoxEdit">
+			<dl>
+				<dt>文件：</dt>
+				<dd><input type="file" name="fineName"/></dd>
+			</dl>
+		</div>-->
+		<!--<textarea name="" id="dataShow" style="width:600px;height:90px;margin:10px 20px"></textarea>
+		<button onclick="upData()">保存</button>-->
+	</body>
+</html>

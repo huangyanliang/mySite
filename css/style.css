@@ -67,6 +67,10 @@ textarea {
 	overflow: auto;
 }
 
+.hide{
+	display: none;
+}
+
 .cleardiv {
 	clear: both;
 	height: 0;

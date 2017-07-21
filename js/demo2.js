@@ -1,4 +1,11 @@
 $(function() {
+	window.mu = new nono.MutationJs(document.getElementById("edit_box"));//获取监听对象 
+    mu.disconnect();//取消监听 
+    mu.reObserve();//重新监听
+    $("#undo").on('click',function(){//点击撤回给取消撤回加事件
+    	$("#redo").attr("onclick","mu.redo()");
+    });
+    
 	var dragresize = new DragResize('dragresize', {maxLeft: 1200, maxTop: 800});
 	dragresize.isElement = function(elm) {
 		if(elm.className && elm.className.indexOf('drsElement') > -1) return true;
@@ -12,6 +19,10 @@ $(function() {
 	    $('.fontColor').hide();
 	    $('.bgColor').hide();
 	})
+	$(".edit_box").on('click',function(){
+		$('.fontSize').hide();$('.textMarquee').hide();$('.playTime').hide();
+	});
+	
 	$(".fontColor span").bind("click",function(){//修改文字颜色
 		var box =$("#boxId").val();
 		var color = $(this).css("background-color");
@@ -51,8 +62,9 @@ $(function() {
 		})
 	}	
 	
-	$(".drsElement").on('click',function(){
+	$(".drsElement").on('mousedown',function(){
 		$("#boxId").val($(this).attr("id"));
+		//$(this).css("border-color","#009688").siblings().css("border-color","#f00");
 	});
 	
 //
@@ -87,16 +99,6 @@ $(function() {
 					addVideo();
 				}
 			},
-			/*{
-				text: "编辑",
-				func: function() {
-					var hideBoxId = $("#boxClass").val();
-					if(document.getElementById(hideBoxId)){//判断div是否存在
-						
-					}
-					
-				}
-			},*/
 			{
 				text: "移除",
 				func: function() {
@@ -126,7 +128,7 @@ function save(){//保存
 		}else if($(this)[0].className.indexOf("songBox")>=0){
 			var controlType = "songBox";
 		}
-		dataShow += '{"controlType":"'+ controlType +'","width":'+ $(this)[0].offsetWidth +',"height":'+ $(this)[0].offsetHeight +',"left":'+ $(this)[0].offsetLeft +',"top":'+ $(this)[0].offsetTop +',"color":"black","backgroundColor":"white","boxId":"imgBox0","path":"rtmp://192.168.0.33","time":60}'
+		dataShow += '{"controlType":"'+ controlType +'","width":'+ $(this)[0].offsetWidth +',"height":'+ $(this)[0].offsetHeight +',"left":'+ $(this)[0].offsetLeft +',"top":'+ $(this)[0].offsetTop +',"color":"'+ $(this).css("color") +'","backgroundColor":"'+ $(this).css("background-color") +'","boxId":"'+ $(this)[0].id +'","path":"rtmp://192.168.0.33","time":60}'
 		var len = $(".drsElement").length-1;
 		if(len>i){
 			dataShow +=',';
@@ -139,9 +141,9 @@ function save(){//保存
 
 function addText(){//添加文字
 	var num=$(".drsElement").length;
-	var imgBox='<div class="textBox drsElement drsMoveHandle" style="top:200px;left:200px" id="textBox'+num+'">测试文字</div>';
+	var imgBox='<div class="textBox drsElement drsMoveHandle" style="top:200px;left:200px" id="textBox'+num+'" data-text="这是一段滚动文字"><p>这是一段滚动文字</p></div>';
 	$(".edit_box").append(imgBox);
-	$(".textBox").on('click',function(){
+	$(".textBox").on('mousedown',function(){
 		$("#boxId").val($(this).attr("id"));
 	});
 }
@@ -150,7 +152,7 @@ function addImg(){//添加图片
 	var num=$(".drsElement").length;
 	var imgBox='<div class="imgBox drsElement drsMoveHandle" style="top:200px;left:200px" id="imgBox'+num+'"></div>';
 	$(".edit_box").append(imgBox);
-	$(".imgBox").on('click',function(){
+	$(".imgBox").on('mousedown',function(){
 		$("#boxId").val($(this).attr("id"));//记录Id
 	})
 }
@@ -159,7 +161,7 @@ function addVideo(){//添加视频
 	var num=$(".drsElement").length;
 	var imgBox='<div class="videoBox drsElement drsMoveHandle" style="top:200px;left:200px" id="videoBox'+num+'"></div>';
 	$(".edit_box").append(imgBox);
-	$(".videoBox").on('click',function(){
+	$(".videoBox").on('mousedown',function(){
 		$("#boxId").val($(this).attr("id"));
 	})
 }
@@ -168,7 +170,7 @@ function addSong(){//添加音乐
 	var num=$(".drsElement").length;
 	var imgBox='<div class="songBox drsElement drsMoveHandle" style="top:200px;left:200px" id="songBox'+num+'"></div>';
 	$(".edit_box").append(imgBox);
-	$(".songBox").on('click',function(){
+	$(".songBox").on('mousedown',function(){
 		$("#boxId").val($(this).attr("id"));
 	})
 }
@@ -225,11 +227,87 @@ function removeAll(){//清除所有
 function changeFontColor(){//选择字体颜色
 	event.stopImmediatePropagation();//取消事件冒泡；
 	$(".bgColor").hide();
+	$(".fontSize").hide();
+	$(".textMarquee").hide();
+	$(".playTime").hide();
 	$(".fontColor").toggle();
 }
 
 function changeBgColor(){//选择背景颜色
 	event.stopImmediatePropagation();//取消事件冒泡；
 	$(".fontColor").hide();
+	$(".fontSize").hide();
+	$(".textMarquee").hide();
+	$(".playTime").hide();
 	$(".bgColor").toggle();
 }
+
+
+function changeAlign(align){//修改对齐方式
+	var box =$("#boxId").val();
+	$("#"+box+" p").css("text-align",align);
+	
+}
+
+function changeMarquee(){//选择循环属性
+	event.stopImmediatePropagation();//取消事件冒泡；
+	$(".fontColor").hide();
+	$(".bgColor").hide();
+	$(".fontSize").hide();
+	$(".playTime").hide();
+	$(".textMarquee").toggle();
+}
+
+function changeFontSize(){//选择字体大小
+	event.stopImmediatePropagation();//取消事件冒泡；
+	$(".fontColor").hide();
+	$(".bgColor").hide();
+	$(".textMarquee").hide();
+	$(".playTime").hide();
+	$(".fontSize").toggle();
+}
+
+function changePlayTime(){//选择播放时长
+	event.stopImmediatePropagation();//取消事件冒泡；
+	$(".fontColor").hide();
+	$(".bgColor").hide();
+	$(".textMarquee").hide();
+	$(".fontSize").hide();
+	$(".playTime").toggle();
+}
+
+function textMarquee(tag){//给文字添加滚动效果
+	if(tag==1){
+		var box =$("#boxId").val();
+		var html = $("#"+box).data("text");
+		if($("select[name=marTag]").val()==1){
+			html = '<marquee direction="'+ $("select[name=marDirection]").val() +'" behavior="'+ $("select[name=marBehavior]").val() +'" scrollamount="'+ $("select[name=marScrollamount]").val() +'">'+ html +'</marquee>';
+			$("#"+box+" p").html(html);
+			$(".textMarquee").hide();
+		}else{
+			$("#"+box+" p").html(html);
+		}
+	}
+	$(".textMarquee").hide();
+}
+
+function fontSize(tag){//设置字体大小
+	if(tag==1){
+		var box =$("#boxId").val();
+		var size = $("input[name=fontSize]").val();
+		$("#"+box).css("font-size",size+'px');
+	}
+	$(".fontSize").hide();
+
+}
+
+function playTime(tag){//设置播放时长
+	if(tag==1){
+		var box =$("#boxId").val();
+		var size = $("input[name=playTime]").val();
+		$("#"+box).attr("data-time",size);
+	}
+	$(".playTime").hide();
+
+}
+

@@ -1,6 +1,6 @@
-.box{overflow:hidden;margin:50px;}
+.box{overflow:hidden;margin:50px;width:1350px;}
 
-.edit_box_t{width:1280px;height:60px;background-color:#393D49;border-bottom:solid 2px #009688;border-radius:5px 5px 0px 0px;}
+.edit_box_t{width:1350px;height:60px;background-color:#393D49;border-bottom:solid 2px #009688;border-radius:5px 5px 0px 0px;}
 .logo{color:#fff;line-height:60px;margin-left:20px;float:left;}
 .edit_box_tMenu{width:60%;height:30px;float:left;margin-top:25px;
 margin-left:50px;border-radius: 30px 30px 0px 0px;}
@@ -22,22 +22,23 @@ text-align:center;height:22px;border-radius: 3px;}
 .edit_box_l dd{color:#fff;text-align:center;font-size:14px;margin-top:-3px;}
 .edit_box_l dt{width:70px;height:48px;text-align: center;}
 
-.edit_box{width:1200px;height:800px;border:1px #009688 solid;border-top:0px;border-left:0px;float:left;position: relative;background-color:#fff;}
+.edit_box_r{width:70px;height:800px;float:right;background-color:#393D49;}
+.edit_box_r ul{float:left;padding-bottom:10px;}
+.edit_box_r li{float:left;margin-left:9px;padding:2px;cursor:pointer;margin-top:10px;
+text-align:center;height:22px;border-radius: 3px;}
+.edit_box_r li img{height:18px;}
+.edit_box_r li:hover{background-color:#009688;}
+
+.edit_box{width:1200px;height:800px;border-bottom:1px #009688 solid;float:left;position: relative;background-color:#fff;}
 .imgBox{width:202px;height:202px;background: url(../img/img.png) no-repeat center center;z-index: 1000;}
 .imgBox img{width:100%;vertical-align: middle;}
-.textBox{width:202px;height:42px;background: url(../img/text.png) no-repeat center center;z-index: 1000;}
+.textBox{width:202px;min-height:42px;background: url(../img/text.png) no-repeat center center;z-index: 1000;}
 .videoBox{width:302px;height:202px;background: url(../img/video.png) no-repeat center center;z-index: 1000;}
 .songBox{width:252px;height:252px;background: url(../img/song.png) no-repeat center center;z-index: 1000;}
 
 
-/*.imgBoxEdit{width:300px;height:200px;position: fixed;top:50%;left:50%;background:#efefef;padding:10px;border-radius: 3px;
-margin-top:-150px;margin-left:-100px;}
-.imgBoxEdit dl{line-height:45px;width:100%;}
-.imgBoxEdit dt{float:left;width:80px;text-align:right;}
-.imgBoxEdit dd{float:left;}*/
-
 .drsElement{background-color:#fff;border:1px #999 dashed;position:absolute;top: 100px;left:100px;
-cursor: move;}
+cursor: move;max-width:1200px;max-height: 800px;}
 .dragresize {position: absolute;width: 5px;height: 5px;font-size: 1px;background: #EEE;border: 1px solid #333;}
 .dragresize-tl {top: -8px;left: -8px;cursor: nw-resize;}
 .dragresize-tm {top: -8px;left: 50%;margin-left: -4px;cursor: n-resize;}
@@ -49,7 +50,7 @@ cursor: move;}
 .dragresize-br {bottom: -8px;right: -8px;cursor: se-resize;}
 
 .fontColorBtn,.bgColorBtn{position: relative;}
-.fontColor,.bgColor{width:80px;height:80px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#fff;display: none;}
+.fontColor,.bgColor{width:80px;height:80px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#fff;display: none;right:0px;}
 .fontColor span,.bgColor span{width:10px;height:10px;float:left;margin-top:5px;margin-left:5px;}
 .c_red{background-color:red;}
 .c_orange{background-color:orange;}
@@ -60,3 +61,16 @@ cursor: move;}
 .c_purple{background-color:purple;}
 .c_black{background-color:black;}
 
+/*右边属性分割线*/
+.cut_border{width:50px;height:1px;border-top:1px #51555f dashed;float:left;margin-left:10px;}
+
+.textMarqueeBtn,.fontSizeBtn,.playTimeBtn{position: relative;}
+.textMarquee{width:160px;height:165px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#393D49;display:none;right:0px;}
+.textMarquee dl,.fontSize dl,.playTime dl{overflow:hidden;margin-top:10px;font-size:12px;color:#fff;}
+.textMarquee dt,.fontSize dt,.playTime dt{float:left;width:80px;text-align:right;padding-right:5px;line-height:20px;}
+.textMarquee dd,.fontSize dd,.playTime dd{float:left;}
+.textMarquee dd select,.fontSize dd input,.playTime dd input{width:60px;border:0px;border-radius: 3px;height:20px;}
+.marBtn{float:right;width:50px;height:23px;text-align:center;line-height:23px;color:#fff;cursor: pointer;
+background-color:#009688;border-radius: 3px;margin-right:19px;margin-top:10px;font-size:12px;}
+.marBtn:hover{background-color:#5FB878;}
+.fontSize,.playTime{width:160px;height:75px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#393D49;display:none;right:0px;}

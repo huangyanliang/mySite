@@ -6,17 +6,18 @@
 		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery-smartMenu.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/dragresize.js"></script>
+		<script type="text/javascript" src="js/mutation.js" ></script>
 		<script src="js/demo2.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="css/common.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo2.css"/>
 		<link rel="stylesheet" type="text/css" href="css/smartMenu.css"/>
 	</head>
 	<body>
-		<input type="hidden" id="boxId" />
+		<input type="text" id="boxId" />
 		<div class="box">
 			<div class="edit_box_t">
 				<div class="logo">拖拽式网页编辑器</div>
-				<div class="edit_box_tMenu">
+				<!--<div class="edit_box_tMenu">
 					<ul>
 						<li onclick="changeFontColor()" class="fontColorBtn"><img src="img/fontColor.png">
 							<div class="fontColor">
@@ -39,9 +40,11 @@
 						<li onclick="moverRight()"><img src="img/right.png"></li><i></i>
 						<li onclick="moverDown()"><img src="img/down.png"></li><i></i>
 						<li onclick="moverFull()"><img src="img/fullScreen.png"></li><i></i>
-						<li onclick="removeAll()"><img src="img/removeAll.png"></li>
+						<li onclick="removeAll()"><img src="img/removeAll.png"></li><i></i>
+						<li onclick="mu.undo()" id="undo"><img src="img/fallback.png"></li><i></i>
+						<li id="redo"><img src="img/fallbacks.png"></li>
 					</ul>
-				</div>
+				</div>-->
 				<div class="editSave" onclick="save()"><img src="img/save.png">保存</div>
 			</div>
 			<div class="edit_box_l">
@@ -62,17 +65,88 @@
 					<dd>视频</dd>
 				</dl>
 			</div>
-			<div class="edit_box">
+			<div class="edit_box" id="edit_box">
 				<!--<div class="imgBox"></div>-->
 			</div>
-		</div>
-		<!--<div class="imgBoxEdit">
-			<dl>
-				<dt>文件：</dt>
-				<dd><input type="file" name="fineName"/></dd>
-			</dl>
-		</div>-->
-		<!--<textarea name="" id="dataShow" style="width:600px;height:90px;margin:10px 20px"></textarea>
-		<button onclick="upData()">保存</button>-->
+			<div class="edit_box_r">
+				<ul>
+					<li onclick="mu.undo()" id="undo" title="撤销"><img src="img/fallback.png"></li>
+					<li id="redo" title="取消撤销"><img src="img/fallbacks.png"></li>
+					<li onclick="moverLeft()" title="靠左"><img src="img/left.png"></li>
+					<li onclick="moverRight()" title="靠右"><img src="img/right.png"></li>
+					<li onclick="moverUp()" title="靠上"><img src="img/up.png"></li>
+					<li onclick="moverDown()" title="靠下"><img src="img/down.png"></li>
+					<li onclick="moverFull()" title="全屏"><img src="img/fullScreen.png"></li>
+					<li onclick="removeAll()" title="清屏"><img src="img/removeAll.png"></li>
+				</ul>
+				<div class="cut_border"></div>
+				<ul>
+					<li class="playTimeBtn"><img title="播放时长" src="img/times.png" onclick="changePlayTime()">
+						<div class="playTime">
+							<dl>
+								<dt>播放时长：</dt>
+								<dd><input type="text" name="playTime" value="60" /> s</dd>
+							</dl>
+							<div class="marBtn" onclick="playTime(0)">取消</div>
+							<div class="marBtn" onclick="playTime(1)">确定</div>
+						</div>
+					</li>
+					<li class="fontSizeBtn"><img title="字体大小" src="img/fontSize.png" onclick="changeFontSize()">
+						<div class="fontSize">
+							<dl>
+								<dt>字体大小：</dt>
+								<dd><input type="text" name="fontSize" value="16" /></dd>
+							</dl>
+							<div class="marBtn" onclick="fontSize(0)">取消</div>
+							<div class="marBtn" onclick="fontSize(1)">确定</div>
+						</div>
+					</li>
+					<li onclick="changeFontColor()" class="fontColorBtn" title="文字颜色"><img src="img/fontColor.png">
+						<div class="fontColor">
+							<span class="c_red"></span><span class="c_orange"></span><span class="c_yellow"></span>
+							<span class="c_green"></span><span class="c_blue"></span><span class="c_indigo"></span>
+							<span class="c_purple"></span><span class="c_black"></span>
+						</div>
+					</li>
+					<li onclick="changeBgColor()" class="bgColorBtn" title="背景颜色"><img src="img/bgColor.png">
+						<div class="bgColor">
+							<span class="c_red"></span><span class="c_orange"></span><span class="c_yellow"></span>
+							<span class="c_green"></span><span class="c_blue"></span><span class="c_indigo"></span>
+							<span class="c_purple"></span><span class="c_black"></span>
+						</div>
+					</li>
+					<li onclick="changeAlign('left')" title="左对齐"><img src="img/align_l.png"></li>
+					<li onclick="changeAlign('right')" title="右对齐"><img src="img/align_r.png"></li>
+					<li onclick="changeAlign('center')" title="左对齐居中"><img src="img/align_c.png"></li>
+					<li class="textMarqueeBtn"><img title="滚动" onclick="changeMarquee()" src="img/scroll.png">
+						<div class="textMarquee">
+							<dl>
+								<dt>是否滚动：</dt>
+								<dd><select name="marTag"><option value="0">否</option><option value="1">是</option></select></dd>
+							</dl>
+							<dl>
+								<dt>滚动方向：</dt>
+								<dd><select name="marDirection"><option value="left">左</option><option value="right">右</option>
+									<option value="up">上</option><option value="down">下</option>
+								</select></dd>
+							</dl>
+							<dl>
+								<dt>滚动方式：</dt>
+								<dd><select name="marBehavior"><option value="scroll">循环</option><option value="slide">一次</option>
+									<option value="alternate">来回</option>
+								</select></dd>
+							</dl>
+							<dl>
+								<dt>滚动速度：</dt>
+								<dd><select name="marScrollamount"><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+									<option value="4">4</option><option value="5">5</option><option value="6">6</option>
+								</select></dd>
+							</dl>
+							<div class="marBtn" onclick="textMarquee(0)">取消</div>
+							<div class="marBtn" onclick="textMarquee(1)">确定</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 	</body>
 </html>

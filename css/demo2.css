@@ -74,3 +74,5 @@ cursor: move;max-width:1200px;max-height: 800px;}
 background-color:#009688;border-radius: 3px;margin-right:19px;margin-top:10px;font-size:12px;}
 .marBtn:hover{background-color:#5FB878;}
 .fontSize,.playTime{width:160px;height:75px;border:1px #ddd solid;position: absolute;z-index: 10000000;background:#393D49;display:none;right:0px;}
+
+
